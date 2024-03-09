@@ -171,7 +171,9 @@ class URDFParser():
                 return xyz, rpy
     
     def link_has_child(self, link_name):
-        return self.robot.child_map.has_key(link_name)
+        # return self.robot.child_map.has_key(link_name)
+        return link_name in self.robot.child_map
+
 
     def link_attached_to_base(self, link_name):
         attached_joint, parent_link = self.robot.parent_map[link_name]
